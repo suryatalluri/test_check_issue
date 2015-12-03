@@ -25,7 +25,38 @@ Application.$controller("MainPageController", ["$scope", function ($scope) {
 
 </script>
 <script id="Main.variables.json">
-var _MainPage_Variables_ ={}
+var _MainPage_Variables_ ={
+	"deviceVariable1": {
+		"owner": "Page",
+		"dataSet": {
+			"coords": {
+				"latitude": 0,
+				"longitude": 0,
+				"altitude": 0,
+				"accuracy": 0,
+				"altitudeAccuracy": 0,
+				"heading": 0,
+				"speed": 0
+			},
+			"timestamp": 0
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "getCurrentGeoPosition",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-deviceVariable1-wm.DeviceVariable-1449133656784"
+	}
+}
 </script>
 <script id="Main.html" type="text/ng-template">
 <wm-page data-ng-controller="MainPageController" name="page1">
@@ -44,6 +75,7 @@ var _MainPage_Variables_ ={}
                 <wm-button class="btn-default" name="button3" caption="right"></wm-button>
             </wm-buttongroup>
             <wm-button class="btn-default" caption="Button" type="button" name="button1"></wm-button>
+            <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Variables.deviceVariable1.dataSet" lat="coords.latitude" lng="coords.longitude"></wm-prefab>
         </wm-page-content>
     </wm-content>
 </wm-page>
