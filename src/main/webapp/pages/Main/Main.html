@@ -1,10 +1,13 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage">
-  <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
-  <wm-mobile-navbar name="mobile_navbar1" title="Title" backbuttoniconclass="fa fa-chevron-left" leftnavpaneliconclass="fa fa-bars">
-    <wm-button class="btn-transparent" caption="" type="button" name="AddButton" iconclass="glyphicon glyphicon-plus"></wm-button>
-  </wm-mobile-navbar>
-  <wm-content name="content1">
-    <wm-page-content columnwidth="12" name="page_content1"></wm-page-content>
-  </wm-content>
-  <wm-mobile-tabbar dataset="home,music,edit" name="mobile_tabbar1"></wm-mobile-tabbar>
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-composite name="composite1">
+                <wm-label class="col-xs-4" name="label1"></wm-label>
+                <wm-container class="col-xs-8" name="container1">
+                    <wm-text name="text1" type="number" step="0.01"></wm-text>
+                </wm-container>
+            </wm-composite>
+            <wm-fileupload name="fileupload1" service="FileService" operation="uploadFile"></wm-fileupload>
+        </wm-page-content>
+    </wm-content>
 </wm-page>
